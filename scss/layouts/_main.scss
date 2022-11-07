@@ -1,0 +1,174 @@
+@use '../utils/functions' as f;
+@use '../utils/breakpoints' as bp;
+
+main {
+    // display: none;
+    width: min(100%, f.rem(330));
+    margin-inline: auto;
+
+    & article:nth-child(1) {
+        // display: none;
+        // background-color: red !important;
+        // padding: 0 f.rem(16);
+        text-align: center;
+        margin-bottom: f.rem(32);
+        
+
+        h1 {
+            color: var(--head-txt-clr);
+            font-size: f.rem(40);
+            font-weight: bold;
+            margin-bottom: f.rem(24);
+        }
+
+        p {
+            color: var(--sub-txt-clr);
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+    }
+
+    @include bp.breakpointMin(medium) {
+        width: min(calc(100% - f.rem(100)), f.rem(1100));
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: f.rem(64);
+
+        & article:nth-child(1) {
+            text-align: left;
+
+            h1 {
+                font-size: f.rem(64);
+            }
+
+            p {
+                font-size: f.rem(20);
+            }
+        }
+    }
+}
+
+.rating {
+    // display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: f.rem(16);
+    text-align: center;
+    border-radius: f.rem(10);
+    margin-bottom: f.rem(32);
+
+    .rating-container {
+        // background-color: red !important;
+        background-color: var(--rating-card-clr);
+        padding: f.rem(16);
+        width: 100%;
+        border-radius: f.rem(10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: f.rem(10);
+        transition: margin 1s ease-in-out;
+
+        .rate {
+            font-weight: 700;
+            color: var(--rating-txt-clr);
+        }
+    }
+
+    @include bp.breakpointMin(medium) {
+        grid-column: 2;
+
+        .rating-container {
+            padding: f.rem(16) f.rem(32);
+            text-align: left;
+            width: 90%;
+            flex-direction: row;
+            justify-content: unset;
+        }
+
+        & .rating-container:nth-child(2) {
+            // background-color: red !important;
+            margin-left: f.rem(64);
+        }
+
+        & .rating-container:last-child {
+            // background-color: red !important;
+            margin-left: f.rem(128);
+        }
+    }
+}
+
+.testimonials {
+    // background-color: red !important;
+    // display: grid;
+    // place-content: center;
+    // margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: f.rem(16);
+    flex-direction: column;
+
+    .testimonial-container {
+        // background-color: red !important;
+        background-color: var(--testimonial-card-clr);
+        padding: f.rem(28);
+        border-radius: f.rem(10);
+        width: min(100%, f.rem(350));
+        transition: margin-top 1s ease-in;
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: f.rem(16);
+            margin-bottom: f.rem(32);
+            
+            img {
+                width: f.rem(40);
+                border-radius: 50%;
+            }
+
+            h2 {
+                font-size: f.rem(16);
+                font-weight: bold;
+                color: var(--testimonial-txt-clr);
+                
+                span {
+                    display: block;
+                    font-weight: 500;
+                    font-size: f.rem(15);
+                    color: var(--testimonial-span-clr);
+                    margin-top: f.rem(5);
+                }
+            }
+        }
+
+        p {
+            display: block;
+            line-height: 1.3;
+            color: var(--testimonial-txt-clr);
+            font-weight: 500;
+        }
+    }
+
+    @include bp.breakpointMin(medium) {
+        margin-top: f.rem(-90);
+        grid-column: span 2;
+        flex-direction: row;
+        // background-color: red !important;
+
+        & .testimonial-container:nth-child(2) {
+            // background-color: red !important;
+            margin-top: f.rem(64);
+        }
+
+        & .testimonial-container:last-child {
+            // background-color: red !important;
+            margin-top: f.rem(128);
+        }
+    }
+}

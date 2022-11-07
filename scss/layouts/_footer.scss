@@ -1,0 +1,39 @@
+@use '../utils/functions' as f;
+
+footer {
+    position: absolute;
+    bottom: f.rem(10);
+    right: 0;
+    left: 0;
+}
+
+.attribution {
+  color: var(--link-txt-clr);
+    font-size: f.rem(14);
+    font-weight: 500;
+    text-align: center;
+}
+
+.attribution a {
+  color: var(--link-clr);
+  font-size: f.rem(16);
+  font-weight: 700;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: 0;
+    height: f.rem(2);
+    background-color: var(--link-after-clr);
+    transition: width 500ms ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../utils/functions' as f;
+
+p {
+    font-size: f.rem(17);
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+}
