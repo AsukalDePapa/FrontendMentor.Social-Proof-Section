@@ -88,6 +88,7 @@ main {
             width: 90%;
             flex-direction: row;
             justify-content: unset;
+            gap: f.rem(16);
         }
 
         & .rating-container:nth-child(2) {
