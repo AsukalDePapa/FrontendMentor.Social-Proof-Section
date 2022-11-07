@@ -30,7 +30,7 @@ footer {
     width: 0;
     height: f.rem(2);
     background-color: var(--link-after-clr);
-    transition: width 500ms ease-in-out;
+    transition: width 300ms ease-in-out;
   }
 
   &:hover::after {
